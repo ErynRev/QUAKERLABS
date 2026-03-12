@@ -115,13 +115,36 @@ class QArmWorkspace:
         self.redDcellBin.spawn_id_box_walls_from_center_degrees(actorNumbers=[10, 11, 12, 13, 14],
                                                            centerLocation=[0.3, 0.45, 0.80],
                                                            yaw=0,
-                                                           xSize=0.17, ySize=0.17, zHeight=0.1,
+                                                           xSize=0.15, ySize=0.15, zHeight=0.1,
                                                            wallThickness=0.02,
                                                            floorThickness=0.04,
                                                            wallColor=[0.8, 0.8, 0.8],
                                                            floorColor=[0.5, 0, 0],
                                                            waitForConfirmation=True)
 
+        # Create green D-cell bin
+        self.greenDcellBin = QLabsBasicShape(self.qlabs)
+        self.greenDcellBin.spawn_id_box_walls_from_center_degrees(actorNumbers=[15, 16, 17, 18, 19],
+                                                           centerLocation=[0.13, 0.45, 0.80],
+                                                           yaw=0,
+                                                           xSize=0.15, ySize=0.15, zHeight=0.1,
+                                                           wallThickness=0.02,
+                                                           floorThickness=0.04,
+                                                           wallColor=[0.8, 0.8, 0.8],
+                                                           floorColor=[0, 0.5, 0],
+                                                           waitForConfirmation=True)
+        
+        # Create blue D-cell bin
+        self.blueDcellBin = QLabsBasicShape(self.qlabs)
+        self.blueDcellBin.spawn_id_box_walls_from_center_degrees(actorNumbers=[20, 21, 22, 23, 24],
+                                                           centerLocation=[-0.04, 0.45, 0.80],
+                                                           yaw=0,
+                                                           xSize=0.15, ySize=0.15, zHeight=0.1,
+                                                           wallThickness=0.02,
+                                                           floorThickness=0.04,
+                                                           wallColor=[0.8, 0.8, 0.8],
+                                                           floorColor=[0, 0, 0.5],
+                                                           waitForConfirmation=True)
         
         # Create cell rack
         self.cellRack = QLabsBasicShape(self.qlabs)
@@ -141,12 +164,12 @@ class QArmWorkspace:
         self.cellWidget = QLabsWidget(self.qlabs)
         self.cellWidget.widget_spawn_shadow(enableShadow=True)
         scale = [[0.028, 0.028, 0.06]]
-        color = [[0.6, 0, 0]]
+        color = [[0.6, 0, 0], [0, 0.6, 0], [0, 0, 0.6]]
         locations = [[0.58, 0.2, 1], [0.58, 0.1, 1], [0.58, 0.0, 1], [0.58, -0.1, 1]]
 
         for location in locations:
             scale1 = randrange(1)
-            color1 = randrange(1)
+            color1 = randrange(3)
             self.cellWidget.spawn(location=location,
                              rotation=[0, 0, 0],
                              scale=scale[scale1],
@@ -169,7 +192,7 @@ class QArmWorkspace:
 
         print("Starting real-time model...")
 
-        qarm_model_path = os.path.join(os.environ['RTMODELS_DIR'], 'QArms/QArm_Spawn0')
+        qarm_model_path = os.path.join(r'C:\Users\erynh\Documents\QUAKERLABS\Quanser_QArm_Student\libraries\resources\rtmodels', 'QArms/QArm_Spawn0')
 
         # current_dir = Path(__file__).resolve().parent
         # project_root = current_dir.parent

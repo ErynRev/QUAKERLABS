@@ -128,8 +128,8 @@ detectPosition = (np.array([0.40, 0.00, 0.25], dtype=np.float64), 0.5, np.array(
 pickUpPosition = (np.array([0.40, 0.00, 0.25], dtype=np.float64), 0.5, np.array([0, 1, 1], dtype=np.float64))  # Start Pickup position
 
 red18650cellBinPosition = (np.array([0.30, 0.45, 0.25], dtype=np.float64), np.array([1, 0, 0], dtype=np.float64)) # Red 18650-cell bin position // Labelled D-Cell but thats wrong?
-green18650cellBinPosition = (np.array([0.45, 0.45, 0.25], dtype=np.float64), np.array([1, 0, 0], dtype=np.float64)) # Green 18650-cell bin position
-blue18650cellBinPosition = (np.array([0.60, 0.45, 0.25], dtype=np.float64), np.array([1, 0, 0], dtype=np.float64)) # Blue 18650-cell bin position
+green18650cellBinPosition = (np.array([0.15, 0.45, 0.25], dtype=np.float64), np.array([1, 0, 0], dtype=np.float64)) # Green 18650-cell bin position
+blue18650cellBinPosition = (np.array([0, 0.45, 0.25], dtype=np.float64), np.array([1, 0, 0], dtype=np.float64)) # Blue 18650-cell bin position
 
 # Changes needed to accomodate D-cells would just to be add their own bins in and thus add these to the code,
 # as they are currently only going back to the home position
@@ -339,14 +339,14 @@ def pickAndPlace(position, colour, cellType, idx):
 
     elif colour == 'Green':
         if cellType == '18650 cell':
-            positionCmd, ledCmd = red18650cellBinPosition
+            positionCmd, ledCmd = green18650cellBinPosition
         else:
             positionCmd, ledCmd = homePosition # Default to home position if no cell type is identified  
 
 
     elif colour == 'Blue':
         if cellType == '18650 cell':
-            positionCmd, ledCmd = red18650cellBinPosition
+            positionCmd, ledCmd = blue18650cellBinPosition
         else:
             positionCmd, ledCmd = homePosition # Default to home position if no cell type is identified  
 
