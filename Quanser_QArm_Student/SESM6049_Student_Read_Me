@@ -1,0 +1,18 @@
+SESM6049 - Quanser QArm Laboratory Code Instructions
+----------------------------------------------------
+
+> Unzip Quanser_Student to 'C:/Users/<Username e.g. lm6g20>/Documents'.
+
+> 'C:/Users/<Username e.g. lm6g20>/Documents/Quanser_QArm_Student/src/virtualFactory' holds many .py files, you will be editing 
+  'PickAndDrop_Startup.py' in the lab, & both 'PickAndDrop_Startup.py' + 'QArm_Workspace_Static_Startup.py' for the accompanying coursework.
+
+> Read 'SESM6049_QArm_Coding_Student_Guidance.pdf' ('C:/Users/<Username e.g. lm6g20>/Documents/Quanser_QArm_Student') before starting the lab.
+
+----------------------------------------------------
+
+!!!!!!!!!!!!!
+!! CAUTION !!
+!!!!!!!!!!!!!
+
+Ensure that you backup your 'Quanser_QArm_Student' folder to a local storage device/OneDrive (or similar) before logging off, files stored in 
+'C:/Users/<Username e.g. lm6g20>/Documents' may not be available on other PC's, and may be deleted after logging off.
