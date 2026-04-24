@@ -166,15 +166,17 @@ class QArmWorkspace:
         scale = [[0.028, 0.028, 0.06]]
         color = [[0.6, 0, 0], [0, 0.6, 0], [0, 0, 0.6]]
         locations = [[0.58, 0.2, 1], [0.58, 0.1, 1], [0.58, 0.0, 1], [0.58, -0.1, 1]]
+        colors1 = [ 0, 2, 2, 1]
 
-        for location in locations:
+
+        for i in range(4):
             scale1 = randrange(1)
-            color1 = randrange(3)
-            self.cellWidget.spawn(location=location,
+            #  color1 = randrange(3)
+            self.cellWidget.spawn(location=locations[i],
                              rotation=[0, 0, 0],
                              scale=scale[scale1],
                              configuration= self.cellWidget.CYLINDER,
-                             color=color[color1],
+                             color=color[colors1[i]],
                              measuredMass=100,
                              IDTag=0,
                              properties='',

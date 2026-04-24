@@ -694,7 +694,7 @@ try:
 
         ### Step 5: QArm return to home position and programme terminates ###
         else:
-            if count < 5:
+            if count < 1:
                 count += 1
                 time.sleep(5)
                 workSpace.cell_spawn()
